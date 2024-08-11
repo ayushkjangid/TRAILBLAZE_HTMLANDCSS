@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trail Blaze</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        .headerbox {
+            display: flex;
+            align-items: center;
+        }
+
+        .logoimg {
+            height: 80px;
+        }
+
+        #h2 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6347;
+            border-bottom: 2px solid #ff6347;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ff6347;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e5533e;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('https://images.pexels.com/photos/914128/pexels-photo-914128.jpeg?cs=srgb&dl=pexels-saikat-ghosh-323099-914128.jpg&fm=jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .popular-treks {
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        .popular-treks h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+     
+        .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            white-space: nowrap;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            flex: 0 0 auto;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="headerbox" id="h1">
+            <img class="logoimg" src="logo.png" alt="Trail Blaze Logo">
+        </div>
+        <div class="headerbox" id="h2">
+            TRAIL BLAZE
+        </div>
+        <div class="headerbox" id="h3">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Treks</a>
+                <a href="#">Gear</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact Us</a>
+            </nav>
+        </div>
+        <div class="headerbox" id="h4">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Explore the Great Outdoors</h1>
+    </div>
+
+    <div class="popular-treks">
+        <h2>POPULAR TREKS</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://i.redd.it/pirdzsnut4g71.jpg" alt="Trek 1">
+                <div class="card-content">
+                    <h3>HATHINI KUND</h3>
+                    <p>A BEAUTY OF NATURE WITH A WONDERFUL WATERFALL</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="trek2.jpg" alt="Trek 2">
+                <div class="card-content">
+                    <h3>Trek 2</h3>
+                    <p>Enjoy a scenic trek along a serene lake surrounded by lush forests and wildlife.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="trek3.jpg" alt="Trek 3">
+                <div class="card-content">
+                    <h3>Trek 3</h3>
+                    <p>Explore rugged terrain and witness stunning panoramic views from the summit.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="trek4.jpg" alt="Trek 4">
+                <div class="card-content">
+                    <h3>Trek 4</h3>
+                    <p>Venture through a unique landscape with picturesque scenery and hidden gems.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
