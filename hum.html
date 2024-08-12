@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trail Blaze</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -111,8 +112,10 @@
         .popular-treks {
             padding: 50px 10%;
             text-align: center;
-            margin-top: 20px;
+
             width: 100%;
+            position: relative;
+
         }
 
         .popular-treks h2 {
@@ -200,9 +203,109 @@
             border-color: transparent transparent transparent white;
             transform: translateY(-50%);
         }
-        
+
+        .arrowbutton {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+        }
+
+        .why-trek {
+            padding: 50px 10%;
+            background-color: #fff;
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .why-trek-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .features-container {
+            opacity: 99;
+        }
+
+        .features-container,
+        .animation-container {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .features {
+            padding-top: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .embedanime {
+            width: 100%;
+            height: 100%;
+        }
+
+        .feature {
+            background: #f4f4f4;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: scale(1.05);
+        }
+
+        .feature i {
+            color: #ff6347;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .feature p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .happy-trekkers {
+            padding: 50px 10%;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .happy-trekkers h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .feature {
+                flex: 1 1 calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature {
+                flex: 1 1 100%;
+            }
+        }
+
+
         @media (max-width: 768px) {
             .card {
+                flex: 1 1 calc(50% - 20px);
+            }
+
+            .cards {
                 flex: 1 1 calc(50% - 20px);
             }
         }
@@ -210,6 +313,69 @@
         @media (max-width: 480px) {
             .card {
                 flex: 1 1 100%;
+            }
+
+            .cards {
+                flex: 1 1 100%;
+            }
+        }
+           @media (max-width: 1024px) {
+            .cards {
+                flex-direction: column;
+            }
+
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                justify-content: space-between;
+                padding: 5px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .why-trek-container {
+                flex-direction: column;
+            }
+
+            .features-container,
+            .animation-container {
+                max-width: 100%;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5em;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-box {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .search-box input[type="text"] {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            .why-trek-container {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -246,7 +412,8 @@
         <h2>POPULAR TREKS</h2>
         <div class="cards">
             <div class="card">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkWwH6HPaamlQ-XFLG_-syKv6_VbBZL0UjtR2srvWztFcpWqWoT4VztGqTqTLjidMWzDwgY1VE5BfR3NhApg-EyXMNHpRNteyDElYJynI2W5f-caSBE8-xKYcbvPA7CsoJF1suwMJE9_EC4PxP624IPmpvcSFSJHlQUBauGlb1pLZ1ocbwWcPjxDiJkg/s1600/thw_slt_5.jpeg" alt="Trek 1">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkWwH6HPaamlQ-XFLG_-syKv6_VbBZL0UjtR2srvWztFcpWqWoT4VztGqTqTLjidMWzDwgY1VE5BfR3NhApg-EyXMNHpRNteyDElYJynI2W5f-caSBE8-xKYcbvPA7CsoJF1suwMJE9_EC4PxP624IPmpvcSFSJHlQUBauGlb1pLZ1ocbwWcPjxDiJkg/s1600/thw_slt_5.jpeg"
+                    alt="Trek 1">
                 <div class="card-content">
                     <h3>SAGAR LAKE</h3>
                     <p>A scenic trek to Sagar Lake, featuring stunning mountain views and vibrant wildlife.</p>
@@ -260,24 +427,101 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://example.com/trek3.jpg" alt="Trek 3">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqkkKkfYHirlOASg0-Mxn8uEHrPhxH93I6arm6NvGd8u0MGxfZonDFvPJD2pjmIUXYLv5RduO2JxBesW2wptlzQ4mMg_TWV-js8GGFdREYNnL464Ds1cXYIZlLxA7fupOFRQpvRjyiaF7bjOeTX7jq6zj9I8XVmtfyjsZcGevipJ_ID6O_eBZtyyrnnpB4/s1600/thw_twtk_7.jpeg"
+                    alt="Trek 3">
                 <div class="card-content">
                     <h3>TWIN TOWER</h3>
                     <p>Tackle the rugged Twin Tower Trek for panoramic views and unique rock formations.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://example.com/trek4.jpg" alt="Trek 4">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4fFFyewMixZRex6YqASCNv2WtPAAobzuUtpC73WLrHiYZefkMYdarWXtUo0MTvpvT-uvsKkhTjw17NFJi8JE-V4JawN6ZJ-OiU9u0LnA7KeZ5OQdv3vlP0jZTeOBMGOAkNe-JQQUq8NbnIXOHPSCAnbOHz5bpyhjrmeVw1i9dQLK96C7elJJFFLzxeg/s1600/thw_jmt_8.jpeg"
+                    alt="Trek 4">
                 <div class="card-content">
-                    <h3>Trek 4</h3>
-                    <p>Venture through a unique landscape with picturesque scenery and hidden gems.</p>
+                    <h3>JALMAHAL TREK</h3>
+                    <p>Enjoy a tranquil hike with scenic views of the historic Jal Mahal and its serene surroundings.
+                    </p>
                 </div>
             </div>
+
+        </div>
+        <div class="arrowbutton">
+            <a href=""> <button><i class="fa-solid fa-arrow-right"></i></button></a>
         </div>
     </div>
 
     <div class="robot"></div>
     <div class="thought-bubble">Hey there! Ready for an adventure?</div>
+    <div class="why-trek">
+        <h2>WHY TREK WITH US?</h2>
+        <div class="why-trek-container">
+            <div class="features-container">
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-hiking fa-3x"></i>
+                        <h3>Expert Guides</h3>
+                        <p>Our seasoned guides have years of experience to ensure a safe and enjoyable trek.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-map-marked-alt fa-3x"></i>
+                        <h3>Unique Trails</h3>
+                        <p>Explore exclusive and less-traveled trails, handpicked for the best trekking experience.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-leaf fa-3x"></i>
+                        <h3>Sustainability</h3>
+                        <p>We prioritize eco-friendly practices to protect nature while enjoying it.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-users fa-3x"></i>
+                        <h3>Community</h3>
+                        <p>Join a community of like-minded adventurers and make lasting memories together.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="animation-container">
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                    type="module"></script>
+                <dotlottie-player src="https://lottie.host/3c2121ab-4295-4814-be53-f1413addfa33/4X2IlbGFuV.json"
+                    background="transparent" speed="1" loop autoplay></dotlottie-player>
+            </div>
+        </div>
+    </div>
+    <div class="happy-trekkers">
+        <h2>HAPPY TREKKERS!!</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://github.com/ayushkjangid/project-image/blob/main/sushi.jpg?raw=true" alt="Trekker 1">
+                <div class="card-content">
+                    <h3>ARYAN SUSAWAT</h3>
+                    <p>"This was the most incredible experience of my life! The views were stunning."</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://example.com/trekker2.jpg" alt="Trekker 2">
+                <div class="card-content">
+                    <h3>RUCHIKA MEENA</h3>
+                    <p>"The guides were so knowledgeable and friendly. I felt safe and had a great time."</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://example.com/trekker3.jpg" alt="Trekker 3">
+                <div class="card-content">
+                    <h3>VATSAL VASHIST</h3>
+                    <p>"The trek was challenging but rewarding. I can't wait to go on another one!"</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://github.com/ayushkjangid/project-image/blob/main/ayush.jpg?raw=true" alt="Trekker 4">
+                <div class="card-content">
+                    <h3>AYUSH JANGID</h3>
+                    <p>"This was a once-in-a-lifetime adventure. I highly recommend it to anyone."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script>
         const thoughtBubble = document.querySelector('.thought-bubble');
